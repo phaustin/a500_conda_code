@@ -1,0 +1,55 @@
+{% set version = "0.0.1" %}
+
+package:
+  name: sam_cython
+  version: {{ version }}
+
+source:
+  path: ../
+
+build:
+  number: 2
+
+requirements:
+  build:
+    - python
+    - cython
+    - numpy
+    - cmake
+    - {{ compiler('c') }}
+    - {{ compiler('fortran') }}
+
+  host:
+    - python
+    - numpy
+    - cython
+    - libgcc-ng [linux]
+    - libgfortran-ng [linux]
+    - libgfortran [osx]
+
+  run:
+    - python
+    - numpy
+    - libgcc-ng [linux]
+    - libgfortran-ng [linux]
+    - libgfortran [osx]
+
+test:
+  requires:
+    - python
+  imports:
+    - sam_cython
+    
+  commands:
+    - conda inspect linkages -p $PREFIX $PKG_NAME  # [not win]
+    - conda inspect objects -p $PREFIX $PKG_NAME  # [osx]
+
+about:
+  home: https://github.com/Unidata/netcdf-fortran
+  license: http://www.unidata.ucar.edu/software/netcdf/copyright.html
+  summary: 'Unidata NetCDF Fortran Library.'
+
+extra:
+  recipe-maintainers:
+    - ocefpaf
+    - bekozi
