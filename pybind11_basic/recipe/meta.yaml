@@ -1,0 +1,54 @@
+package:
+  name: 'hello_pybind'
+  version: 0.1
+
+build:
+  number: 0.1
+
+source:
+  path: ../
+
+requirements:
+  build:
+    - {{ compiler('c') }}
+    - {{ compiler('cxx') }}
+    - python
+    - setuptools
+    - pybind11 
+    - numpy    
+    - xtensor-python
+    - cmake
+    - numpy
+
+  host:
+    - libcxx
+    - python
+    - setuptools
+    - pybind11 
+    - numpy    
+    - xtensor-python
+    - cmake
+    - numpy
+
+
+  run:
+    - libcxx
+    - python
+    - vs2015_runtime  # [win]
+    - numpy
+
+test:
+  requires:
+    - libcxx
+    - pytest
+    
+  files:
+    - ../tests/test_pha.py
+    - ../tests/__init__.py
+    
+  imports:
+    - 'hello_pybind'
+
+about:
+  summary: An example project built with pybind11.
+  license_file: LICENSE

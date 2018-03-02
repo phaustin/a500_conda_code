@@ -1,0 +1,17 @@
+cmake_minimum_required(VERSION 3.8)
+project(do_add)
+enable_language(CXX)
+
+if (NOT (DEFINED "ENV{PREFIX}"))
+     set(PREFIX $ENV{CONDA_PREFIX})
+else()
+     set(PREFIX $ENV{PREFIX})
+endif()
+
+set(CMAKE_MODULE_PATH "${PREFIX}/share/cmake/pybind11")
+include(pybind11Tools)
+SET(CMAKE_C_COMPILER $ENV{CC})
+SET(CMAKE_CXX_COMPILER $ENV{CXX})
+set(CMAKE_BUILD_TYPE Release)
+set(CMAKE_VERBOSE_MAKEFILE ON)
+pybind11_add_module(do_add src/main.cpp)
