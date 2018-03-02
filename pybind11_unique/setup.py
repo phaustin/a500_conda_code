@@ -67,14 +67,14 @@ class CMakeBuild(build_ext):
         subprocess.check_call(['cmake', '--build', '.'] + build_args, cwd=self.build_temp)
 
 setup(
-    name='cpp_make_unique',
+    name='make_unique',
     version='0.0.1',
     packages=['make_unique'],
     author='Dean Moldovan',
     author_email='dean0x7d@gmail.com',
     description='A test project using pybind11 and CMake',
     long_description='',
-    ext_modules=[CMakeExtension('cpp_make_unique')],
+    ext_modules=[CMakeExtension('make_unique.cpp_make_unique')],
     include_package_data=True,
     #package_data = {'make_unique': ['tests/*']},
     cmdclass=dict(build_ext=CMakeBuild),

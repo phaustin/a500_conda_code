@@ -1,4 +1,4 @@
-import cpp_make_unique as uniq
+import make_unique.cpp_make_unique as uniq
 import numpy as np
 
 type_dict={'double':(np.float64,uniq.make_unique_double),

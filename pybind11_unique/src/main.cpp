@@ -17,14 +17,13 @@
 
 template <typename T>
   uint64_t make_unique_T(T* in_vec, int n){
-    std::sort(in_vec,in_vec + n);
     auto last = std::unique(in_vec,in_vec + n);
     int last_index = std::distance(in_vec,last);
+    std::sort(in_vec,in_vec + last_index);
     return last_index;
   }
 
 
-extern "C" {
   uint64_t make_unique_double(xt::pytensor<double,1>& py_vec, uint64_t n){
     double* in_vec = py_vec.raw_data();
     return make_unique_T(in_vec,n);
@@ -41,7 +40,6 @@ extern "C" {
     int32_t *in_vec = py_vec.raw_data();
     return make_unique_T(in_vec,n);
   }
-}  
 
 
 namespace py = pybind11;
@@ -51,7 +49,6 @@ PYBIND11_PLUGIN(cpp_make_unique) {
 
   py::module m("cpp_make_unique", R"pbdoc(
         Pybind11 example plugin
-
     )pbdoc");
 
     m.def("make_unique_double", &make_unique_double, R"pbdoc(

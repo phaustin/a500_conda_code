@@ -18,9 +18,10 @@ requirements:
     - numpy    
     - xtensor-python
     - cmake
-    - numpy
 
   host:
+    - {{ compiler('c') }}
+    - {{ compiler('cxx') }}
     - libcxx
     - python
     - setuptools
@@ -28,14 +29,12 @@ requirements:
     - numpy    
     - xtensor-python
     - cmake
-    - numpy
 
 
   run:
     - libcxx
     - python
     - vs2015_runtime  # [win]
-    - numpy
 
 test:
   requires:
