@@ -1,0 +1,9 @@
+name: test
+channels:
+  - defaults
+  - conda-forge
+dependencies:
+  - pybind11=2.2.2
+  - gxx_linux-64=7.2.0
+  - conda-build=3.6.0
+prefix: /Users/phil/ma36/envs/test

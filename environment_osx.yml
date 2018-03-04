@@ -1,0 +1,12 @@
+name: test
+channels:
+  - defaults
+  - conda-forge
+dependencies:
+  - pybind11=2.2.2
+  - clang_osx-64=4.0.1
+  - conda-build=3.6.0
+  - cython
+  - cmake
+prefix: /Users/phil/ma36/envs/test
+
