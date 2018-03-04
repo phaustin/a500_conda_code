@@ -5,8 +5,11 @@ channels:
 dependencies:
   - pybind11=2.2.2
   - clang_osx-64=4.0.1
+  - clangxx_osx-64=4.0.1
+  - gfortran_osx-64
   - conda-build=3.6.0
   - cython
   - cmake
+  - xtensor-python
 prefix: /Users/phil/ma36/envs/test
 

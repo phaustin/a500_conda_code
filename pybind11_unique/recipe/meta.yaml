@@ -21,7 +21,8 @@ requirements:
     - numpy
 
   host:
-    - libcxx
+    - libcxx # [osx]
+    - libstdcxx-ng # [linux]
     - python
     - setuptools
     - pybind11 
@@ -32,22 +33,16 @@ requirements:
 
 
   run:
-    - libcxx
+    - libcxx  # [osx]
+    - libcxx-ng  # [linux]
     - python
-    - vs2015_runtime  # [win]
     - numpy
 
 test:
   requires:
-    - libcxx
+    - libcxx  # [osx]
+    - libcxx-ng  # [linux]
     - pytest
-    
-  files:
-    - ../tests/test_pha.py
-    - ../tests/__init__.py
-    
-  imports:
-    - 'cpp_make_unique'
 
 about:
   summary: An example project built with pybind11.

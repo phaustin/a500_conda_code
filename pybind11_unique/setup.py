@@ -76,7 +76,7 @@ setup(
     long_description='',
     ext_modules=[CMakeExtension('make_unique.cpp_make_unique')],
     include_package_data=True,
-    #package_data = {'make_unique': ['tests/*']},
+    package_data = {'make_unique': ['tests/*']},
     cmdclass=dict(build_ext=CMakeBuild),
     zip_safe=False,
 )
