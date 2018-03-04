@@ -23,22 +23,20 @@ requirements:
     - python
     - numpy
     - cython
-    - libgcc-ng [linux]
-    - libgfortran-ng [linux]
-    - libgfortran [osx]
+    - libgcc-ng # [linux]
+    - libgfortran-ng # [linux]
+    - libgfortran # [osx]
 
   run:
     - python
     - numpy
-    - libgcc-ng [linux]
-    - libgfortran-ng [linux]
-    - libgfortran [osx]
+    - libgcc-ng # [linux]
+    - libgfortran-ng # [linux]
+    - libgfortran # [osx]
 
 test:
   requires:
     - python
-  imports:
-    - sam_cython
     
   commands:
     - conda inspect linkages -p $PREFIX $PKG_NAME  # [not win]

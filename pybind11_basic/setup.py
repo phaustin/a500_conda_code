@@ -71,7 +71,6 @@ setup(
     long_description='',
     ext_modules=[CMakeExtension('hello_pybind.do_add')],
     include_package_data=True,
-    #package_data = {'make_unique': ['tests/*']},
     cmdclass=dict(build_ext=CMakeBuild),
     zip_safe=False,
 )

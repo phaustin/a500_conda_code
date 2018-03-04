@@ -1,5 +1,5 @@
 package:
-  name: 'cpp_make_unique'
+  name: 'make_unique'
   version: 0.1
 
 build:
