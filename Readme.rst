@@ -180,12 +180,8 @@ build it::
     original vector: [0 5 5 1 2 2 2 3 4 4 4 4 4 5]
     after call:  [0 1 2 3 4 5 5]
     ===== cpp_make_unique-0.1-py36h0a44026_0 OK =====
-    
-    
-    running run_test.py
-    inside hello_pybind __init__.py
-    sum of 1 and 2: 3
-    
+
+
 
 
 
