@@ -6,9 +6,9 @@ import shutil
 import os
 
 
-def clean_build(modulename):
+def clean_build(modulename,tmpdir='.tmpdir'):
     """
-    do a clean build of the module in folder .tmpdir
+    do a clean build of the module in folder tmpdir
 
     Parameters
     ----------
@@ -23,7 +23,7 @@ def clean_build(modulename):
     #
     #
     try:
-        shutil.rmtree('./.tmpdir')
+        shutil.rmtree(tmpdir)
     except FileNotFoundError:
          pass
     try: 
@@ -33,14 +33,12 @@ def clean_build(modulename):
     major, minor, *rest = sys.version_info
     command="python setup.py clean --all".split()
     out=subprocess.check_output(command,stderr=subprocess.STDOUT,universal_newlines=True)
-    command="python setup.py install --prefix=./.tmpdir --single-version-externally-managed --record=record.txt".split()
+    command=f"python setup.py install --prefix={tmpdir} --single-version-externally-managed --record=record.txt".split()
     out=subprocess.check_output(command,stderr=subprocess.STDOUT,universal_newlines=True)
-    the_path= Path(f'./.tmpdir/lib/python{major}.{minor}/site-packages').resolve()
+    the_path= Path(f'{tmpdir}/lib/python{major}.{minor}/site-packages').resolve()
     sys.path.insert(0, str(the_path))
     site.removeduppaths()
     print(out)
-    #print(sys.path)
-
 
 from contextlib import contextmanager
 @contextmanager
