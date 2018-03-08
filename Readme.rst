@@ -4,6 +4,11 @@ Building cython and pybind11 extensions using pip or conda
 Create an environment named test using miniconda3 (working with 4.10)
 =====================================================================
 
+* first conda build tools need to be installed in the root environment::
+
+    conda activate root
+    conda install conda-build
+
 * clone the repo::
 
    git clone https://github.com/phaustin/a500_conda_code.git
@@ -26,6 +31,8 @@ Building pybind11_basic
 ::
 
    cd a500_conda_code/pybind11_basic
+
+
 
 
 Using pip
@@ -58,6 +65,15 @@ build it::
     running run_test.py
     inside hello_pybind __init__.py
     sum of 1 and 2: 3
+
+
+Using clean_build.py
+--------------------
+
+* Do::
+
+    python clean_build.py
+    
 
 Building sam_cython
 ===================
@@ -114,7 +130,14 @@ build it::
     --------- test completed ---------
     finished test
     ===== sam_cython-0.0.1-py36hdc02c5d_2 OK =====
-  
+
+Using clean_build.py
+--------------------
+
+* Do::
+
+    python clean_build.py
+
 
 Building pybind11_unique
 ========================
@@ -182,6 +205,12 @@ build it::
     ===== cpp_make_unique-0.1-py36h0a44026_0 OK =====
 
 
+Using clean_build.py
+--------------------
+
+* Do::
+
+    python clean_build.py
 
 
 

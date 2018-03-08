@@ -7,7 +7,6 @@ dependencies:
   - clang_osx-64=4.0.1
   - clangxx_osx-64=4.0.1
   - gfortran_osx-64
-  - conda-build=3.6.0
   - cython
   - cmake
   - xtensor-python

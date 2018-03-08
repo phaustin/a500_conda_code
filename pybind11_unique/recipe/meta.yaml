@@ -34,14 +34,14 @@ requirements:
 
   run:
     - libcxx  # [osx]
-    - libcxx-ng  # [linux]
+    - libstdcxx-ng  # [linux]
     - python
     - numpy
 
 test:
   requires:
     - libcxx  # [osx]
-    - libcxx-ng  # [linux]
+    - libstdcxx-ng  # [linux]
     - pytest
 
 about:
