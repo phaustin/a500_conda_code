@@ -1,0 +1,7 @@
+pybind11_basic/.tempdir*
+pybind11_basic/.tmpdir*
+/pybind11_basic/record.txt
+pybind11_unique/.tmpdir*
+/pybind11_unique/record.txt
+sam_cython/.cmakebuild*
+sam_cython/.tmpdir*
